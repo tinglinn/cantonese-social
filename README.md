@@ -1,2 +1,1 @@
-# my-project
-Template repository for web-based experiment projects.
+Web-based experiment project probing social meaning of the "lazy accent" (懶音）in Cantonese.
