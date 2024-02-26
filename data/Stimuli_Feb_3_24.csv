@@ -1,0 +1,63 @@
+Condition,Target Word,"Clip (Condition, Word, Clip, Var)",Common_Voice_ID,Gender,Speaker Age,Duration (ms),Transcription,Translation,Notes
+N,你,NL_01_N,common_voice_zh-HK_23595913,F,20s,3456,你點知今日會好天嘎,How did you know the weather would be good today?,
+L,你,NL_01_L,common_voice_zh-HK_23499367,F,20s,2736,你點知今日會好天嘎,How did you know the weather would be good today?,
+N,你,NL_02_N,common_voice_zh-HK_22264650,F,,3456,你點知嘎,How did you know?,
+L,你,NL_02_L,common_voice_zh-HK_23413330,F,,4344,你點知嘎,How did you know?,
+N,呢,NL_03_N,common_voice_zh-HK_23389488,M,30s-40s,,呢度好多人,There's so many people here,
+L,呢,NL_03_L,common_voice_zh-HK_23611983,M,30s-40s,,呢度好多人,There's so many people here,
+N,呢,NL_04_N,common_voice_zh-HK_22743062,M,,,呢個情況,This situation,Need to cut
+L,呢,NL_04_L,common_voice_zh-HK_22943971,M,,,呢個情況,This situation,Need to cut
+N,年,NL_05_N,common_voice_zh-HK_33001128,M,,,一年一次,Once a year,
+L,年,NL_05_L,common_voice_zh-HK_24535686,M,,,一年一次,Once a year,
+N,年,NL_06_N,common_voice_zh-HK_23377425,F,20s,,許多年,Many years,
+L,年,NL_06_L,common_voice_zh-HK_23064246,F,20s,,許多年,Many years,
+N,諗; 耐,NL_07_N,common_voice_zh-HK_23689227,M,20s,,都諗咗好耐先決定㗎,Thought about it a long time before deciding,
+L,諗; 耐,NL_07_L,common_voice_zh-HK_23711018,M,20s,,都諗咗好耐先決定㗎,Thought about it a long time before deciding,
+N,諗,NL_08_N,common_voice_zh-HK_22769350,M,40s,,停一停，諗一諗,Stop and think,
+L,諗,NL_08_L,common_voice_zh-HK_22942922,M,40s,,停一停，諗一諗,Stop and think,
+N,男女,NL_09_N,common_voice_zh-HK_22402136,M,30s-40s,,有男有女,There's men and women,Need to cut
+L,男女,NL_09_L,common_voice_zh-HK_22258697,M,30s-40s,,有男有女,There's men and women,Need to cut
+N,耐,NL_10_N,common_voice_zh-HK_22388175,F,20-30s,,所以搞咗好耐,So it took a long time,Need to cut
+L,耐,NL_10_L,common_voice_zh-HK_23499288,F,20-30s,,所以搞咗好耐,So it took a long time,
+,,,,,,,,,
+NG,我,NGG_01_NG,common_voice_zh-HK_23705434,M,,,一定會睇住我,They will definitely look at me,
+G,我,NGG_01_G,common_voice_zh-HK_23812751,M,,,一定會睇住我,They will definitely look at me,
+NG,我,NGG_02_NG,common_voice_zh-HK_22769375,M,,,我一點起身,I got up at 1,
+G,我,NGG_02_G,common_voice_zh-HK_26940177,M,,,我一點起身,I got up at 1,
+NG,餓,NGG_03_NG,common_voice_zh-HK_22264897,M,,,(最緊要肯做)一定唔會餓死,(you) won't starve,cut up to 
+G,餓,NGG_03_G,common_voice_zh-HK_22286096,M,,,(最緊要肯做)一定唔會餓死,(you) won't starve,cut up to 
+NG,餓,NGG_04_NG,common_voice_zh-HK_22306774,F,20s,,我好鬼死肚餓,I'm so hungry,
+G,餓,NGG_04_G,common_voice_zh-HK_22427301,F,20s,,我好鬼死肚餓,I'm so hungry,
+NG,牛,NGG_05_NG,common_voice_zh-HK_22253576,M,20s,,菜芯炒牛肉,Beef with vegetables,need to cut beginning - random sound
+G,牛,NGG_05_G,common_voice_zh-HK_22222060,M,20s,,菜芯炒牛肉,Beef with vegetables,
+NG,牛,NGG_06_NG,common_voice_zh-HK_22369261,M,40s,,原汁牛肉麵,Original beef noodles,
+G,牛,NGG_06_G,common_voice_zh-HK_22253929,M,40s,,原汁牛肉麵,Original beef noodles,
+NG,眼,NGG_07_NG,common_voice_zh-HK_23402020,M,40s,,眼瞓吶,Sleepy,
+G,眼,NGG_07_G,common_voice_zh-HK_24195161,M,40s,,眼瞓,Sleepy,
+NG,眼,NGG_08_NG,common_voice_zh-HK_22922757,F,30s,,睇完又眼濕濕,Cried after watching,
+G,眼,NGG_08_G,common_voice_zh-HK_22939888,F,30s,,睇完又眼濕濕,Cried after watching,
+NG,牙,NGG_09_NG,common_voice_zh-HK_22328880,M,20s,,以牙還牙以眼還眼,An eye for an eye,
+G,牙,NGG_09_G,common_voice_zh-HK_22222046,M,20s,,以牙還牙以眼還眼,An eye for an eye,
+NG,牙,NGG_10_NG,common_voice_zh-HK_23499341,F,20s,,你夠唔夠牙力同佢傾先,Do (you) have enough power to talk to them?,might have to cut out nei
+G,牙,NGG_10_G,common_voice_zh-HK_23412587,F,20s,,你夠唔夠牙力同佢傾先,Do (you) have enough power to talk to them?,might have to cut out nei
+,,,,,,,,,
+-NG,朋,NGN_01_NG,common_voice_zh-HK_22939754,F,20s,,今天和朋友谈起,Today I talked with a friend about ,cut ending
+-N,朋,NGN_01_N,common_voice_zh-HK_22922555,F,20s,,今天和朋友谈起,Today I talked with a friend about ,cut ending
+-NG,朋,NGN_02_NG,common_voice_zh-HK_22263274,F,20s,,搵個朋友一齊打麻雀,Play Mahjeong with a friend,cut start
+-N,朋,NGN_02_N,common_voice_zh-HK_22273299,F,20s,,搵個朋友一齊打麻雀,Play Mahjeong with a friend,cut start
+-NG,肯,NGN_03_NG,common_voice_zh-HK_22410716,F,30s,,最緊要肯做,The most important thing is to be willing to work,cut ending
+-N,肯,NGN_03_N,common_voice_zh-HK_22337498,F,30s,,最緊要肯做,The most important thing is to be willing to work,cut ending
+-NG,肯,NGN_04_NG,common_voice_zh-HK_23401614,M,30s,,肯定唔止咁少人,It's definitely more than this few people,cut start
+-N,肯,NGN_04_N,common_voice_zh-HK_24520853,M,30s,,肯定唔止咁少人,It's definitely more than this few people,cut start
+-NG,生,NGN_05_NG,common_voice_zh-HK_22264553,M,20s,,唔習慣新嘅學校生活,Not used to new life at school,cut start
+-N,生,NGN_05_N,common_voice_zh-HK_22331604,M,20s,,唔習慣新嘅學校生活,Not used to new life at school,cut start
+-NG,生,NGN_06_NG,common_voice_zh-HK_22416619,M,30s,,學生特別多優惠,There are many student discounts,cut start
+-N,生,NGN_06_N,common_voice_zh-HK_22290029,M,30s,,學生特別多優惠,There are many student discounts,cut start
+-NG,冷,NGN_07_NG,common_voice_zh-HK_22253727,F,20s,,我於是心灰意冷,So I was disappointed,cut start
+-N,冷,NGN_07_N,common_voice_zh-HK_22427194,F,20s,,我於是心灰意冷,So I was disappointed,cut start
+-NG,冷,NGN_08_NG,common_voice_zh-HK_22288124,F,30s,,真係抵冷貪瀟湘,Not dressed for the weather,cut start/end
+-N,冷,NGN_08_N,common_voice_zh-HK_22265773,F,20s,,真係抵冷貪瀟湘,Not dressed for the weather,cut start/end
+-NG,行,NGN_09_NG,common_voice_zh-HK_23554480,F,20s,,可能係言語上或者行為上嘅表達,Maybe the physical or verbal expression,
+-N,行,NGN_09_N,common_voice_zh-HK_23413329,F,30s,,可能係言語上或者行為上嘅表達,Maybe the physical or verbal expression,
+-NG,行,NGN_10_NG,common_voice_zh-HK_22402944,M,30s,,小心駛得萬年船三思而行,Careful gets you the long way,
+-N,行,NGN_10_N,common_voice_zh-HK_22281559,M,30s,,小心駛得萬年船三思而行,Careful gets you the long way,
