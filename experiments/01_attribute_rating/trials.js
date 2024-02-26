@@ -359,4 +359,22 @@ let trial_objects = [
         "gender": "M",
         "condition": "lazy",
     },
+    {
+        "stimulus": "audio/attention_disagree.mp3",
+        "clip": "attention_disagree",
+        "gender": "F",
+        "condition": "attention_check",
+    },
+    {
+        "stimulus": "audio/attention_agree.mp3",
+        "clip": "attention_agree",
+        "gender": "F",
+        "condition": "attention_check",
+    },
+    {
+        "stimulus": "audio/attention_stronglyagree.mp3",
+        "clip": "attention_stronglyagree",
+        "gender": "F",
+        "condition": "attention_check",
+    },
 ];

@@ -11,7 +11,7 @@ const preload_trial = {
 const irb = {
     type: jsPsychHtmlButtonResponse,
     stimulus: ``,
-    choices: ['Continue']
+    choices: ['继续']
 };
 timeline.push(irb);
 
@@ -150,8 +150,6 @@ const language_attitude_survey = {
 };
 timeline.push(language_attitude_survey);
 
-// demographics survey
-
 // free response
 
 
@@ -161,7 +159,7 @@ const payment = {
     questions: [
         {
             prompt: `
-            <p>请提供您的支付宝账号，以便我们转账支付。.</p>
+            <p>请提供您的支付宝账号，以便我们给您转账。.</p>
             `,
             name: 'payment'
         }
