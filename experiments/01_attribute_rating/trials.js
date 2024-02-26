@@ -358,7 +358,163 @@ let trial_objects = [
         "clip": "NGN_10_N",
         "gender": "M",
         "condition": "lazy",
+    }
+];
+
+let filler_objects = [
+    {
+        "stimulus": "audio/filler/filler_01.mp3",
+        "clip": "filler_01",
+        "gender": "M",
+        "condition": "filler"
     },
+    {
+        "stimulus": "audio/filler/filler_02.mp3",
+        "clip": "filler_02",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_03.mp3",
+        "clip": "filler_03",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_04.mp3",
+        "clip": "filler_04",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_05.mp3",
+        "clip": "filler_05",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_06.mp3",
+        "clip": "filler_06",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_07.mp3",
+        "clip": "filler_07",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_08.mp3",
+        "clip": "filler_08",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_09.mp3",
+        "clip": "filler_09",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_10.mp3",
+        "clip": "filler_10",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_11.mp3",
+        "clip": "filler_11",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_12.mp3",
+        "clip": "filler_12",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_13.mp3",
+        "clip": "filler_13",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_14.mp3",
+        "clip": "filler_14",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_15.mp3",
+        "clip": "filler_15",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_16.mp3",
+        "clip": "filler_16",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_17.mp3",
+        "clip": "filler_17",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_18.mp3",
+        "clip": "filler_18",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_19.mp3",
+        "clip": "filler_19",
+        "gender": "M",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_20.mp3",
+        "clip": "filler_20",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_21.mp3",
+        "clip": "filler_21",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_22.mp3",
+        "clip": "filler_22",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_23.mp3",
+        "clip": "filler_23",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_24.mp3",
+        "clip": "filler_24",
+        "gender": "F",
+        "condition": "filler"
+    },
+    {
+        "stimulus": "audio/filler/filler_25.mp3",
+        "clip": "filler_25",
+        "gender": "F",
+        "condition": "filler"
+    }
+];
+
+let attention_check_objects = [
     {
         "stimulus": "audio/attention_disagree.mp3",
         "clip": "attention_disagree",
@@ -377,4 +533,4 @@ let trial_objects = [
         "gender": "F",
         "condition": "attention_check",
     },
-];
+]

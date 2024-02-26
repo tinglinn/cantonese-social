@@ -1,7 +1,18 @@
+const jsPsych = initJsPsych({
+    show_progress_bar: true,
+    auto_update_progress_bar: false,
+    on_finish: function () {
+        //jsPsych.data.displayData('csv');
+        window.location = "https://tinglinn.github.io/cantonese-social/experiments/01_attribute_rating/thanks.html";
+        proliferate.submit({ "trials": jsPsych.data.get().values() });
+    }
+});
+
 let timeline = [];
 
 // preload audio
-const preload_array = trial_objects; // defined in trial
+let all_objects = trial_objects.concat(filler_objects, attention_check_objects)
+const preload_array = all_objects; // defined in trial
 const preload_trial = {
     type: jsPsychPreload,
     audio: preload_array  
@@ -10,7 +21,7 @@ const preload_trial = {
 // irb
 const irb = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: ``,
+    stimulus: `<p>IRB</p>`,
     choices: ['继续']
 };
 timeline.push(irb);
@@ -29,7 +40,7 @@ const intro2 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `<p>请确保您在安静的房间中用电脑完成本实验。在实验过程中，您应使用耳机或耳麦。</p>
             <p>在本实验中，您将聆听简短的音频片段，每段音频中录有一位志愿者朗读的一个短语或句子。</p>
-            <p>"听完每段音频后，您需要回答一些判断题。</p>`,
+            <p>听完每段音频后，您需要回答一些判断题。</p>`,
     choices: ['继续'],
 };
 timeline.push(intro2);
@@ -43,9 +54,10 @@ var likert_scale = [
     "强烈同意"
 ];
 
-// create array of stimuli and randomize stimuli
-let tv_array = create_tv_array(trial_objects);
-let stimuli = shuffle_array(tv_array);
+// create array of critical trials, add attention check and filler trials, then shuffle
+let critical_trials_array = selectCriticalTrials(trial_objects, 5);
+let trials_array = critical_trials_array.concat(attention_check_objects, filler_objects);
+let stimuli = shuffleArray(trials_array);
 
 // create array of attributes and randomize attribute order per participant 
 let raw_attributes = [
@@ -56,7 +68,7 @@ let raw_attributes = [
     { prompt: "这位朗读者很可靠。", name: 'dependable', labels: likert_scale, required: true },
     { prompt: "这位朗读者是广州本地人。", name: 'local', labels: likert_scale, required: true }
 ];
-let attributes = shuffle_array(raw_attributes); // shuffle array is from utils.js
+let attributes = shuffleArray(raw_attributes); // shuffle array is from utils.js
 
 // trial objects
 const trials = {
@@ -129,7 +141,7 @@ timeline.push(demographic_survey);
 
 
 // language attitude survey
-var likert_scale = [
+var likert_scale_attitude = [
     "强烈不同意",
     "不同意",
     "中性",
@@ -141,10 +153,10 @@ const language_attitude_survey = {
     type: jsPsychSurveyLikert,
     preamble: `您有多同意以下的观点？`,
     questions: [
-        { prompt: "粤语是广州文化重要的一部分。", name: 'likert_culture', labels: likert_scale_singlish, required: true },
-        { prompt: "把粤语传承给广州的年轻一代非常重要", name: 'likert_young', labels: likert_scale_singlish, required: true },
-        { prompt: "在广州，粤语已经不再被规范使用", name: 'likert_proper', labels: likert_scale_singlish, required: true },
-        { prompt: "粤语对我的身份认同感很重要。", name: 'likert_identity', labels: likert_scale_singlish, required: true },
+        { prompt: "粤语是广州文化重要的一部分。", name: 'likert_culture', labels: likert_scale_attitude, required: true },
+        { prompt: "把粤语传承给广州的年轻一代非常重要", name: 'likert_young', labels: likert_scale_attitude, required: true },
+        { prompt: "在广州，粤语已经不再被规范使用", name: 'likert_proper', labels: likert_scale_attitude, required: true },
+        { prompt: "粤语对我的身份认同感很重要。", name: 'likert_identity', labels: likert_scale_attitude, required: true },
     ],
     randomize_question_order: true,
 };
@@ -166,3 +178,17 @@ const payment = {
     ]
 };
 timeline.push(payment);
+
+/* thank u */
+const thankyou = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `
+            <p>感谢您完成本次实验！</p>
+            <p>我们将尽快将您的酬劳转给您.</p>
+            <p>请按"提交"按钮正式完成本实验。</p>
+      `,
+    choices: ["提交"],
+};
+timeline.push(thankyou);
+
+jsPsych.run(timeline);
