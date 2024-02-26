@@ -1,0 +1,1 @@
+// shuffle clips, select only one (lazy, non-lazy) per sentence pair, determine trial order
