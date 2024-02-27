@@ -29,8 +29,9 @@ timeline.push(irb);
 // instructions
 const intro1 = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: `<p>本研究的调查对象为以粤语为母语的广州人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次报酬。</p>
-            <p>本实验不超过 20 分钟，完成后您将获得20元人民币，会以支付宝转账的形式交付。</p>
+    stimulus: `
+            <p>本研究的调查对象为母语为粤语的的广州人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次酬劳。</p>
+            <p>本实验不超过 20 分钟，完成后您将获得20元人民币酬劳，会以支付宝转账的形式支付。</p>
             <p>请点击 "继续"。</p>`,
     choices: ['继续'],
 };
@@ -38,8 +39,9 @@ timeline.push(intro1);
 
 const intro2 = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: `<p>请确保您在安静的房间中用电脑完成本实验。在实验过程中，您应使用耳机或耳麦。</p>
-            <p>在本实验中，您将聆听简短的音频片段，每段音频中录有一位志愿者朗读的一个短语或句子。</p>
+    stimulus: `
+            <p>请确保您在安静的房间中用电脑完成本实验。</p>
+            <p>在本实验中，您将聆听简短的音频片段，每段音频都是一名志愿者朗读的一个语段。</p>
             <p>听完每段音频后，您需要回答一些判断题。</p>`,
     choices: ['继续'],
 };
@@ -64,7 +66,7 @@ let raw_attributes = [
     { prompt: "这位朗读者受教育程度很高。", name: 'educated', labels: likert_scale, required: true },
     { prompt: "这位朗读者很友好。", name: 'friendly', labels: likert_scale, required: true },
     { prompt: "这位朗读者很随意。", name: 'casual', labels: likert_scale, required: true },
-    { prompt: "这位朗读者很有涵养。", name: 'proper', labels: likert_scale, required: true },
+    { prompt: "这位朗读者很传统。", name: 'traditional', labels: likert_scale, required: true },
     { prompt: "这位朗读者很可靠。", name: 'dependable', labels: likert_scale, required: true },
     { prompt: "这位朗读者是广州本地人。", name: 'local', labels: likert_scale, required: true }
 ];
@@ -79,7 +81,7 @@ const trials = {
             stimulus: jsPsych.timelineVariable('stimulus'),
             response_allowed_while_playing: false,
             trial_ends_after_audio: true,
-            prompt: `请注意聆听接下来的音频`,
+            prompt: `请注意聆听音频`,
         },
         {
             type: jsPsychSurveyLikert,
