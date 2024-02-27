@@ -48,12 +48,12 @@ const intro2 = {
 timeline.push(intro2);
 
 var likert_scale = [
-    "强烈不同意",
-    "不同意",
-    "较为不同意",
-    "较为同意",
-    "同意",
-    "强烈同意"
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
 ];
 
 // create array of critical trials, add attention check and filler trials, then shuffle
@@ -89,7 +89,7 @@ const trials = {
                 new_audio_path = "<audio controls src=" + '"' + jsPsych.timelineVariable('stimulus') + '"' + ">";
                 return `<p>按播放键再次聆听音频。</p>
               <p>${new_audio_path}</p>
-              <p>您有多同意以下的说法:</p>`
+              <p>您有多同意以下的说法？1表示完全不同意，6代表完全同意。</p>`
             },
             questions: function () {
                 return attributes
@@ -140,25 +140,41 @@ const demographic_survey = {
 timeline.push(demographic_survey);
 
 // language background survey
+const language_background_survey = {
+    type: jsPsychSurveyHtmlForm,
+    preamble: `<p>您会说哪些语言或方言（比如台山话，粤语，客家话，普通话）？</p>
+               <p>请按您<b>使用的自如程度</b>将它们进行排序，将您最自如的语言或方言放在第一位。</p>`,
+    html: ` <p>
+                <input name="lang1" type="text" placeholder="" required><BR><BR>
+                <input name="lang2" type="text" placeholder=""><BR><BR>
+                <input name="lang3" type="text" placeholder=""><BR><BR>
+                <input name="lang4" type="text" placeholder=""><BR><BR>
+                <input name="lang5" type="text" placeholder="">
+            </p>`
+};
+timeline.push(language_background_survey);
 
+const language_use_survey = {
+    type: jsPsychSurveyLikert,
+    preample: `您有多经常在以下场景使用粤语？1代表从不使用，6代表您在此场合只使用粤语。`,
+    pages: [
+        { type: 'multi-choice', prompt: "与家人。", name: 'family', labels: likert_scale, required: true },
+        { type: 'multi-choice', prompt: "与朋友", name: 'friends', labels: likert_scale, required: true },
+        { type: 'multi-choice', prompt: "在学校或工作场所", name: 'study/work', labels: likert_scale, required: true },
+    ],
+    randomize_question_order: true,
+};
+timeline.push(language_use_survey);
 
 // language attitude survey
-var likert_scale_attitude = [
-    "强烈不同意",
-    "不同意",
-    "中性",
-    "同意",
-    "强烈同意"
-];
-
 const language_attitude_survey = {
     type: jsPsychSurveyLikert,
-    preamble: `您有多同意以下的观点？`,
+    preamble: `您有多同意以下的观点？1代表完全不同意，6代表完全同意。`,
     questions: [
-        { prompt: "粤语是广州文化重要的一部分。", name: 'likert_culture', labels: likert_scale_attitude, required: true },
-        { prompt: "把粤语传承给广州的年轻一代非常重要", name: 'likert_young', labels: likert_scale_attitude, required: true },
-        { prompt: "在广州，粤语已经不再被规范使用", name: 'likert_proper', labels: likert_scale_attitude, required: true },
-        { prompt: "粤语对我的身份认同感很重要。", name: 'likert_identity', labels: likert_scale_attitude, required: true },
+        { prompt: "粤语是广州文化重要的一部分。", name: 'likert_culture', labels: likert_scale, required: true },
+        { prompt: "把粤语传承给广州的年轻一代非常重要", name: 'likert_young', labels: likert_scale, required: true },
+        { prompt: "在广州，粤语已经不再被规范使用", name: 'likert_proper', labels: likert_scale, required: true },
+        { prompt: "粤语对我的身份认同感很重要。", name: 'likert_identity', labels: likert_scale, required: true },
     ],
     randomize_question_order: true,
 };
