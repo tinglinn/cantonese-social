@@ -516,20 +516,20 @@ let filler_objects = [
 
 let attention_check_objects = [
     {
-        "stimulus": "audio/attention_disagree.mp3",
-        "clip": "attention_disagree",
+        "stimulus": "audio/attention_check_1.mp3",
+        "clip": "attention_check_1",
         "gender": "F",
         "condition": "attention_check",
     },
     {
-        "stimulus": "audio/attention_agree.mp3",
-        "clip": "attention_agree",
+        "stimulus": "audio/attention_check_4.mp3",
+        "clip": "attention_check_4",
         "gender": "F",
         "condition": "attention_check",
     },
     {
-        "stimulus": "audio/attention_stronglyagree.mp3",
-        "clip": "attention_stronglyagree",
+        "stimulus": "audio/attention_check_6.mp3",
+        "clip": "attention_check_6",
         "gender": "F",
         "condition": "attention_check",
     },

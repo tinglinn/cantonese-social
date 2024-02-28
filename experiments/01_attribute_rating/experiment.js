@@ -102,7 +102,7 @@ const trials = {
     ],
     timeline_variables: stimuli,
 };
-timeline.push(trials);
+// timeline.push(trials);
 
 // demographic survey
 const demographic_survey = {
@@ -156,11 +156,11 @@ timeline.push(language_background_survey);
 
 const language_use_survey = {
     type: jsPsychSurveyLikert,
-    preample: `您有多经常在以下场景使用粤语？1代表从不使用，6代表您在此场合只使用粤语。`,
-    pages: [
-        { type: 'multi-choice', prompt: "与家人。", name: 'family', labels: likert_scale, required: true },
-        { type: 'multi-choice', prompt: "与朋友", name: 'friends', labels: likert_scale, required: true },
-        { type: 'multi-choice', prompt: "在学校或工作场所", name: 'study/work', labels: likert_scale, required: true },
+    preamble: `您有多经常在以下场景使用粤语？1代表从不使用，6代表您在此场合只使用粤语。`,
+    questions: [
+        { prompt: "与家人。", name: 'family', labels: likert_scale, required: true },
+        { prompt: "与朋友", name: 'friends', labels: likert_scale, required: true },
+        { prompt: "在学校或工作场所", name: 'study/work', labels: likert_scale, required: true },
     ],
     randomize_question_order: true,
 };
