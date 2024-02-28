@@ -103,7 +103,8 @@ const trials = {
                 new_audio_path = "<audio controls src=" + '"' + jsPsych.timelineVariable('stimulus') + '"' + ">";
                 return `<p>按播放键再次聆听音频。</p>
               <p>${new_audio_path}</p>
-              <p>您有多同意以下的说法？1表示完全不同意，6代表完全同意。</p>`
+              <p>您有多同意以下的说法？1表示完全不同意，6代表完全同意。</p>
+              <p>以“友好”为例，1-这位朗读者一点都不友好，6-这位朗读者非常友好。</p>`
             },
             questions: function () {
                 return attributes
@@ -131,7 +132,7 @@ const demographic_survey = {
                 type: 'multi-choice',
                 prompt: "您的性别是什么?",
                 name: 'gender',
-                options: ['男', '女', '非二元性别', '我不希望回答这个问题'],
+                options: ['男', '女', '非二元性别', '不想回答'],
                 required: false,
             },
             {
@@ -144,7 +145,7 @@ const demographic_survey = {
                 type: 'multi-choice',
                 prompt: "您的最高学历是什么?",
                 name: 'education',
-                options: ['未完成小学', '小学', '初中', '高中或中专', '大专', '本科', '硕士', '博士', '我不希望回答这个问题'],
+                options: ['未完成小学', '小学', '初中', '高中或中专', '大专', '本科', '硕士', '博士', '不想回答'],
                 required: false,
             }
         ]
