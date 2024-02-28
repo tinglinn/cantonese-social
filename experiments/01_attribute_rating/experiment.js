@@ -1,9 +1,10 @@
 const jsPsych = initJsPsych({
     show_progress_bar: true,
-    auto_update_progress_bar: false,
+    auto_update_progress_bar: true,
+    message_progress_bar: "实验进度",
     on_finish: function () {
         //jsPsych.data.displayData('csv');
-        window.location = "https://tinglinn.github.io/cantonese-social/experiments/01_attribute_rating/thanks.html";
+        window.location = "https://cantonese-social.vercel.app/thanks.html";
         proliferate.submit({ "trials": jsPsych.data.get().values() });
     }
 });
@@ -21,7 +22,20 @@ const preload_trial = {
 // irb
 const irb = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: `<p>IRB</p>`,
+    stimulus: `<p style="width: 1000px; margin-bottom: -250px">
+    您被邀请参加一项斯坦福大学的研究。
+    <BR><BR>在此实验中，您会完成一项跟语言有关的任务，例如读或听一些字、描述图片或场景、造句、或完成简单的语言游戏。
+    <BR><BR>本研究中没有已知的风险、成本或不适。
+    <BR><BR>
+    <BR><BR>
+    如果您同意参与这项研究，请继续。
+    <BR><BR>
+    <BR><BR>
+    </p>
+    <p style="width: 1000px; font-size: 9pt; position: relative; top: 330px; padding-bottom: 30px; text-align: justify">
+    如果您已读完此表格并决定参与此项目，请明白您的参与是自愿的，您有权随时撤回您的同意或停止参与，而不会受到惩罚或失去您原本可以享有的利益有权。 您有权拒绝回答任何问题。 您的个人隐私将在研究产生的所有已发布和书面数据中得到保护。
+    <BR><BR>联系信息：问题、疑虑或投诉：如果您对本研究、其程序、风险和益处有任何问题、疑虑或投诉，请用邮箱联系Ting Lin(linting@stanford.edu)或者Judith Degen教授(jdegen@stanford.edu)。如果您对这项研究的进行方式不满意，或者如果您对研究或您作为参与者的权利有任何疑虑、投诉或一般问题，请联系斯坦福机构审查委员会 (IRB) 发言与独立于研究团队的人联系 +1(650)-723-2480 或拨打免费电话 1-866-680-2906。 您也可以致函 Stanford IRB, Stanford University, Stanford, CA 94305-5401 或发送电子邮件至 irbnonmed@stanford.edu。
+    </p>`,
     choices: ['继续']
 };
 timeline.push(irb);
