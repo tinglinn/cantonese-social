@@ -4,7 +4,7 @@ const jsPsych = initJsPsych({
     message_progress_bar: "实验进度",
     on_finish: function () {
         //jsPsych.data.displayData('csv');
-        window.location = "https://cantonese-social.vercel.app/thanks.html";
+        window.location = "https://tinglinn.github.io/cantonese-social/experiments/01_attribute_rating/thanks.html";
         proliferate.submit({ "trials": jsPsych.data.get().values() });
     }
 });
@@ -12,7 +12,7 @@ const jsPsych = initJsPsych({
 let timeline = [];
 
 // preload audio
-let all_objects = trial_objects.concat(filler_objects, attention_check_objects)
+let all_objects = trial_objects.concat(attention_check_objects)
 const preload_array = all_objects; // defined in trial
 const preload_trial = {
     type: jsPsychPreload,
@@ -71,8 +71,8 @@ var likert_scale = [
 ];
 
 // create array of critical trials, add attention check and filler trials, then shuffle
-let critical_trials_array = selectCriticalTrials(trial_objects, 5);
-let trials_array = critical_trials_array.concat(attention_check_objects, filler_objects);
+let critical_trials_array = selectCriticalTrials(trial_objects);
+let trials_array = critical_trials_array.concat(attention_check_objects);
 let stimuli = shuffleArray(trials_array);
 
 // create array of attributes and randomize attribute order per participant 

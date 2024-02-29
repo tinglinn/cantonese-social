@@ -8,31 +8,25 @@ function shuffleArray(arr) {
 };
 
 // select clips
-function selectCriticalTrials(trial_objects, countPerGroup) {
+function selectCriticalTrials(trial_objects) {
     // Define arrays to hold selected clips for each group
-    let selectedNL = [];
-    let selectedNGG = [];
-    let selectedNGN = [];
+    const pairs = {};
 
-    // Function to select random clips from a group
-    function selectRandomClipsFromGroup(group, count) {
-        let selected = [];
-        while (selected.length < count) {
-            let randomClip = group[Math.floor(Math.random() * group.length)];
-            // Check if the selected clip's pair is not already in the selected array
-            if (!selected.find(clip => clip.clip.slice(0, -2) === randomClip.clip.slice(0, -2))) {
-                selected.push(randomClip);
-            }
+    // Group clips into pairs based on common clip identifier (i.e. "NL_01")
+    trial_objects.forEach(obj => {
+        const clipIdentifier = obj.clip.split('_')[0];
+        if (!pairs[clipIdentifier]) {
+            pairs[clipIdentifier] = [];
         }
-        return selected;
+        pairs[clipIdentifier].push(obj);
+    });
+
+    // Randomly select one clip from each pair
+    const selectedClips = [];
+    for (const clipIdentifier in pairs) {
+        const pair = pairs[clipIdentifier];
+        const randomIndex = Math.floor(Math.random() * pair.length);
+        selectedClips.push(pair[randomIndex]);
     }
-
-    // Randomly select clips from each group
-    selectedNL = selectRandomClipsFromGroup(trial_objects.filter(obj => obj.clip.startsWith('NL')), countPerGroup);
-    selectedNGG = selectRandomClipsFromGroup(trial_objects.filter(obj => obj.clip.startsWith('NGG')), countPerGroup);
-    selectedNGN = selectRandomClipsFromGroup(trial_objects.filter(obj => obj.clip.startsWith('NGN')), countPerGroup);
-
-    // Concatenate selected clips from all groups
-    let selectedClips = selectedNL.concat(selectedNGG, selectedNGN);
     return selectedClips;
 }
