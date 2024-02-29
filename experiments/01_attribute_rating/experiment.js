@@ -27,7 +27,6 @@ const irb = {
     <BR><BR>在此实验中，您会完成一项跟语言有关的任务，例如读或听一些字、描述图片或场景、造句、或完成简单的语言游戏。
     <BR><BR>本研究中没有已知的风险、成本或不适。
     <BR><BR>
-    <BR><BR>
     如果您同意参与这项研究，请继续。
     <BR><BR>
     <BR><BR>
@@ -45,7 +44,7 @@ const intro1 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
             <p>本研究的调查对象为母语为粤语的的广州人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次酬劳。</p>
-            <p>本实验不超过 20 分钟，完成后您将获得20元人民币酬劳，会以支付宝转账的形式支付。</p>
+            <p>本实验用时不会超过15分钟，完成后您将获得20元人民币酬劳，会以支付宝转账的形式支付。</p>
             <p>请点击 "继续"。</p>`,
     choices: ['继续'],
 };
@@ -117,7 +116,7 @@ const trials = {
     ],
     timeline_variables: stimuli,
 };
-// timeline.push(trials);
+timeline.push(trials);
 
 // demographic survey
 const demographic_survey = {
