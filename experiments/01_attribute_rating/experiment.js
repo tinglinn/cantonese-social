@@ -1,6 +1,6 @@
 const jsPsych = initJsPsych({
     show_progress_bar: true,
-    auto_update_progress_bar: true,
+    auto_update_progress_bar: false,
     message_progress_bar: "实验进度",
     on_finish: function () {
         //jsPsych.data.displayData('csv');
@@ -37,7 +37,7 @@ const irb = {
     </p>`,
     choices: ['继续'],
     on_finish: function (data) {
-        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+        jsPsych.setProgressBar(0) // adjust total num of trials
     },
 };
 timeline.push(irb);
@@ -110,7 +110,7 @@ const trials = {
     timeline: [],
 };
 
-stimuli.forEach(stimulus => {
+stimuli.forEach((stimulus, index) => {
     trials.timeline.push(
         {
             type: jsPsychAudioKeyboardResponse,
@@ -131,7 +131,7 @@ stimuli.forEach(stimulus => {
             },
             questions: attributes,
             on_finish: function (data) {
-                jsPsych.setProgressBar(data.trial_index / stimuli.length);
+                jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
             },
             data: stimulus.data
         }
@@ -172,6 +172,9 @@ const demographic_survey = {
         ]
     ],
     button_label_finish: '继续',
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(demographic_survey);
 
@@ -186,7 +189,10 @@ const language_background_survey = {
                 <input name="lang3" type="text" placeholder=""><BR><BR>
                 <input name="lang4" type="text" placeholder=""><BR><BR>
                 <input name="lang5" type="text" placeholder="">
-            </p>`
+            </p>`,
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(language_background_survey);
 
@@ -199,6 +205,9 @@ const language_use_survey = {
         { prompt: "在学校或工作场所", name: 'study/work', labels: likert_scale, required: true },
     ],
     randomize_question_order: true,
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(language_use_survey);
 
@@ -213,6 +222,9 @@ const language_attitude_survey = {
         { prompt: "粤语对我的身份认同感很重要。", name: 'likert_identity', labels: likert_scale, required: true },
     ],
     randomize_question_order: true,
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(language_attitude_survey);
 
@@ -229,7 +241,10 @@ const payment = {
             `,
             name: 'payment'
         }
-    ]
+    ],
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(payment);
 
@@ -242,6 +257,9 @@ const thankyou = {
             <p>请按"提交"按钮正式完成本实验。</p>
       `,
     choices: ["提交"],
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(thankyou);
 
