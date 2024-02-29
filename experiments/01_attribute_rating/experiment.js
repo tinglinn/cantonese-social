@@ -35,7 +35,10 @@ const irb = {
     如果您已读完此表格并决定参与此项目，请明白您的参与是自愿的，您有权随时撤回您的同意或停止参与，而不会受到惩罚或失去您原本可以享有的利益有权。 您有权拒绝回答任何问题。 您的个人隐私将在研究产生的所有已发布和书面数据中得到保护。
     <BR><BR>联系信息：问题、疑虑或投诉：如果您对本研究、其程序、风险和益处有任何问题、疑虑或投诉，请用邮箱联系Ting Lin(linting@stanford.edu)或者Judith Degen教授(jdegen@stanford.edu)。如果您对这项研究的进行方式不满意，或者如果您对研究或您作为参与者的权利有任何疑虑、投诉或一般问题，请联系斯坦福机构审查委员会 (IRB) 发言与独立于研究团队的人联系 +1(650)-723-2480 或拨打免费电话 1-866-680-2906。 您也可以致函 Stanford IRB, Stanford University, Stanford, CA 94305-5401 或发送电子邮件至 irbnonmed@stanford.edu。
     </p>`,
-    choices: ['继续']
+    choices: ['继续'],
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(irb);
 
@@ -47,6 +50,9 @@ const intro1 = {
             <p>本实验用时不会超过15分钟，完成后您将获得20元人民币酬劳，会以支付宝转账的形式支付。</p>
             <p>请点击 "继续"。</p>`,
     choices: ['继续'],
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(intro1);
 
@@ -57,8 +63,22 @@ const intro2 = {
             <p>在本实验中，您将聆听简短的音频片段，每段音频都是一名志愿者朗读的一个语段。</p>
             <p>听完每段音频后，您需要回答一些判断题。</p>`,
     choices: ['继续'],
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
 };
 timeline.push(intro2);
+
+const soundcheck = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `<p>实验开始前，请调整音量，确保您可以非常清楚地听到以下音频。</p>
+    <p><audio controls><source src="./audio/soundcheck.mp3" type="audio/mp3"></audio></p>`,
+    choices: ['继续'],
+    on_finish: function (data) {
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+    },
+}
+timeline.push(soundcheck)
 
 var likert_scale = [
     "1",
@@ -87,11 +107,15 @@ let attributes = shuffleArray(raw_attributes); // shuffle array is from utils.js
 
 // trial objects
 const trials = {
-    timeline: [
+    timeline: [],
+};
+
+stimuli.forEach(stimulus => {
+    trials.timeline.push(
         {
             type: jsPsychAudioKeyboardResponse,
             choices: ['NO_KEYS'],
-            stimulus: jsPsych.timelineVariable('stimulus'),
+            stimulus: stimulus.stimulus,
             response_allowed_while_playing: false,
             trial_ends_after_audio: true,
             prompt: `请注意聆听音频`,
@@ -99,24 +123,22 @@ const trials = {
         {
             type: jsPsychSurveyLikert,
             preamble: function () {
-                new_audio_path = "<audio controls src=" + '"' + jsPsych.timelineVariable('stimulus') + '"' + ">";
+                new_audio_path = "<audio controls src=" + '"' + stimulus.stimulus + '"' + ">";
                 return `<p>按播放键再次聆听音频。</p>
               <p>${new_audio_path}</p>
               <p>您有多同意以下的说法？1表示完全不同意，6代表完全同意。</p>
               <p>以“友好”为例，1-这位朗读者一点都不友好，6-这位朗读者非常友好。</p>`
             },
-            questions: function () {
-                return attributes
-            },
+            questions: attributes,
             on_finish: function (data) {
-                jsPsych.setProgressBar(data.trial_index / 93)
+                jsPsych.setProgressBar(data.trial_index / stimuli.length);
             },
-            data: jsPsych.timelineVariable('data')
-        },
-    ],
-    timeline_variables: stimuli,
-};
+            data: stimulus.data
+        }
+    );
+});
 timeline.push(trials);
+
 
 // demographic survey
 const demographic_survey = {

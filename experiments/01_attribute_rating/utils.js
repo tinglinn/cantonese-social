@@ -15,7 +15,6 @@ function selectCriticalTrials(trial_objects) {
     // Group clips into pairs based on common clip identifier (i.e. "NL_01")
     trial_objects.forEach(obj => {
         const clipIdentifier = obj.clip.substring(0, obj.clip.lastIndexOf('_'));
-        console.log(clipIdentifier);
         if (!pairs[clipIdentifier]) {
             pairs[clipIdentifier] = [];
         }
@@ -29,6 +28,5 @@ function selectCriticalTrials(trial_objects) {
         const randomIndex = Math.floor(Math.random() * pair.length);
         selectedClips.push(pair[randomIndex]);
     }
-    console.log(selectedClips.length)
     return selectedClips;
 }
