@@ -229,6 +229,33 @@ const language_attitude_survey = {
 timeline.push(language_attitude_survey);
 
 // free response
+var free_response = {
+    type: jsPsychSurvey,
+    pages: [
+        [
+            {
+                type: 'multi-choice',
+                prompt: "您听过懒音这个概念吗?",
+                name: 'have_heard',
+                options: ['是', '否'],
+                required: true,
+            },
+            {
+                type: 'multi-choice',
+                prompt: "您日常对话中会使用懒音吗",
+                name: 'use',
+                options: ['是', '否'],
+                required: false,
+            },
+            {
+                type: 'text',
+                prompt: "如果听过懒音这个用法，您对懒音的使用有什么看法吗？",
+                name: 'attitude',
+                required: false,
+            },
+        ]
+    ]
+}
 
 
 // payment information
