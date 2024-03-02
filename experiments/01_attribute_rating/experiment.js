@@ -37,7 +37,7 @@ const irb = {
     </p>`,
     choices: ['继续'],
     on_finish: function (data) {
-        jsPsych.setProgressBar(0) // adjust total num of trials
+        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
 };
 timeline.push(irb);
@@ -47,7 +47,7 @@ const intro1 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
             <p>本研究的调查对象为母语为粤语的的广州人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次酬劳。</p>
-            <p>本实验用时不会超过15分钟，完成后您将获得20元人民币酬劳，会以支付宝转账的形式支付。</p>
+            <p>本实验将用时大约15分钟，完成后您将获得30元人民币酬劳，会以支付宝转账的形式支付。</p>
             <p>请点击 "继续"。</p>`,
     choices: ['继续'],
     on_finish: function (data) {
@@ -72,7 +72,9 @@ timeline.push(intro2);
 const soundcheck = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `<p>实验开始前，请调整音量，确保您可以非常清楚地听到以下音频。</p>
-    <p><audio controls><source src="./audio/soundcheck.mp3" type="audio/mp3"></audio></p>`,
+    <p><audio controls><source src="./audio/soundcheck.mp3" type="audio/mp3"></audio></p>
+    <br><p>此外，以下音频将于实验过程中会出现数次，请遵守音频中的指示，<br>在那一题全部选择音频中的数字。</br></p>
+    <p><audio controls><source src="./audio/attention_check_1.mp3" type="audio/mp3"></audio></p`,
     choices: ['继续'],
     on_finish: function (data) {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
@@ -129,6 +131,7 @@ stimuli.forEach((stimulus, index) => {
               <p>您有多同意以下的说法？1表示完全不同意，6代表完全同意。</p>
               <p>以“友好”为例，1-这位朗读者一点都不友好，6-这位朗读者非常友好。</p>`
             },
+            button_label_finish: '继续',
             questions: attributes,
             on_finish: function (data) {
                 jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
@@ -193,6 +196,7 @@ const language_background_survey = {
     on_finish: function (data) {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
+    button_label_finish: '继续',
 };
 timeline.push(language_background_survey);
 
@@ -200,7 +204,7 @@ const language_use_survey = {
     type: jsPsychSurveyLikert,
     preamble: `您有多经常在以下场景使用粤语？1代表从不使用，6代表您在此场合只使用粤语。`,
     questions: [
-        { prompt: "与家人。", name: 'family', labels: likert_scale, required: true },
+        { prompt: "与家人", name: 'family', labels: likert_scale, required: true },
         { prompt: "与朋友", name: 'friends', labels: likert_scale, required: true },
         { prompt: "在学校或工作场所", name: 'study/work', labels: likert_scale, required: true },
     ],
@@ -247,9 +251,10 @@ var free_response = {
                 required: false,
             },
         ]
-    ]
+    ],
+    button_label_finish: '继续',
 }
-
+timeline.push(free_response)
 
 // payment information
 const payment = {
@@ -273,7 +278,7 @@ const thankyou = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
             <p>感谢您完成本次实验！</p>
-            <p>我们将尽快将您的酬劳转给您.</p>
+            <p>我们将尽快将您的酬劳转给您。如有问题，可以微信联系tinglin_22。</p>
             <p>请按"提交"按钮正式完成本实验。</p>
       `,
     choices: ["提交"],
