@@ -241,15 +241,8 @@ var free_response = {
                 required: true,
             },
             {
-                type: 'multi-choice',
-                prompt: "您日常对话中会使用懒音吗",
-                name: 'use',
-                options: ['是', '否'],
-                required: false,
-            },
-            {
                 type: 'text',
-                prompt: "如果听过懒音这个用法，您对懒音的使用有什么看法吗？",
+                prompt: "如果听过懒音这个概念，您对懒音的使用有什么看法吗？",
                 name: 'attitude',
                 required: false,
             },
