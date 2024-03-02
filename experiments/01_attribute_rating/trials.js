@@ -47,18 +47,18 @@ let trial_objects = [
         "gender": "M",
         "condition": "lazy",
     },
-    {
-        "stimulus": "audio/NL/NL_05_N.mp3",
-        "clip": "NL_05_N",
-        "gender": "M",
-        "condition": "proper",
-    },
-    {
-        "stimulus": "audio/NL/NL_05_L.mp3",
-        "clip": "NL_05_L",
-        "gender": "M",
-        "condition": "lazy",
-    },
+    // {
+    //     "stimulus": "audio/NL/NL_05_N.mp3",
+    //     "clip": "NL_05_N",
+    //     "gender": "M",
+    //     "condition": "proper",
+    // },
+    // {
+    //     "stimulus": "audio/NL/NL_05_L.mp3",
+    //     "clip": "NL_05_L",
+    //     "gender": "M",
+    //     "condition": "lazy",
+    // },
     {
         "stimulus": "audio/NL/NL_06_N.mp3",
         "clip": "NL_06_N",
@@ -191,18 +191,18 @@ let trial_objects = [
         "gender": "M",
         "condition": "lazy",
     },
-    {
-        "stimulus": "audio/NGG/NGG_07_NG.mp3",
-        "clip": "NGG_07_NG",
-        "gender": "M",
-        "condition": "proper",
-    },
-    {
-        "stimulus": "audio/NGG/NGG_07_G.mp3",
-        "clip": "NGG_07_G",
-        "gender": "M",
-        "condition": "lazy",
-    },
+    // {
+    //     "stimulus": "audio/NGG/NGG_07_NG.mp3",
+    //     "clip": "NGG_07_NG",
+    //     "gender": "M",
+    //     "condition": "proper",
+    // },
+    // {
+    //     "stimulus": "audio/NGG/NGG_07_G.mp3",
+    //     "clip": "NGG_07_G",
+    //     "gender": "M",
+    //     "condition": "lazy",
+    // },
     {
         "stimulus": "audio/NGG/NGG_08_NG.mp3",
         "clip": "NGG_08_NG",
@@ -299,18 +299,18 @@ let trial_objects = [
         "gender": "M",
         "condition": "lazy",
     },
-    {
-        "stimulus": "audio/NGN/NGN_06_NG.mp3",
-        "clip": "NGN_06_NG",
-        "gender": "M",
-        "condition": "proper",
-    },
-    {
-        "stimulus": "audio/NGN/NGN_06_N.mp3",
-        "clip": "NGN_06_N",
-        "gender": "M",
-        "condition": "lazy",
-    },
+    // {
+    //     "stimulus": "audio/NGN/NGN_06_NG.mp3",
+    //     "clip": "NGN_06_NG",
+    //     "gender": "M",
+    //     "condition": "proper",
+    // },
+    // {
+    //     "stimulus": "audio/NGN/NGN_06_N.mp3",
+    //     "clip": "NGN_06_N",
+    //     "gender": "M",
+    //     "condition": "lazy",
+    // },
     {
         "stimulus": "audio/NGN/NGN_07_NG.mp3",
         "clip": "NGN_07_NG",

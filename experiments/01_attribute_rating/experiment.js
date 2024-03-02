@@ -73,7 +73,7 @@ const soundcheck = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `<p>实验开始前，请调整音量，确保您可以非常清楚地听到以下音频。</p>
     <p><audio controls><source src="./audio/soundcheck.mp3" type="audio/mp3"></audio></p>
-    <br><p>此外，以下音频将于实验过程中会出现数次，请遵守音频中的指示，<br>在那一题全部选择音频中的数字。</br></p>
+    <br><p>此外，以下音频将于实验过程中会出现数次，请遵守音频中的指示，<br>那一轮的每一道判断题<b>都请选择音频中的数字</b>。</p>
     <p><audio controls><source src="./audio/attention_check_1.mp3" type="audio/mp3"></audio></p`,
     choices: ['继续'],
     on_finish: function (data) {
@@ -112,7 +112,7 @@ const trials = {
     timeline: [],
 };
 
-stimuli.forEach((stimulus, index) => {
+stimuli.forEach((stimulus) => {
     trials.timeline.push(
         {
             type: jsPsychAudioKeyboardResponse,
@@ -131,12 +131,12 @@ stimuli.forEach((stimulus, index) => {
               <p>您有多同意以下的说法？1表示完全不同意，6代表完全同意。</p>
               <p>以“友好”为例，1-这位朗读者一点都不友好，6-这位朗读者非常友好。</p>`
             },
-            button_label_finish: '继续',
             questions: attributes,
             on_finish: function (data) {
                 jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
             },
-            data: stimulus.data
+            data: stimulus.data,
+            button_label_finish: '继续',
         }
     );
 });
@@ -212,6 +212,7 @@ const language_use_survey = {
     on_finish: function (data) {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
+    button_label_finish: '继续',
 };
 timeline.push(language_use_survey);
 
@@ -229,6 +230,7 @@ const language_attitude_survey = {
     on_finish: function (data) {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
+    button_label_finish: '继续',
 };
 timeline.push(language_attitude_survey);
 
@@ -270,6 +272,7 @@ const payment = {
     on_finish: function (data) {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
+    button_label_finish: '继续',
 };
 timeline.push(payment);
 
