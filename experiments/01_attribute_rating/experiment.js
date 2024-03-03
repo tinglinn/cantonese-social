@@ -140,7 +140,7 @@ stimuli.forEach((stimulus) => {
         }
     );
 });
-timeline.push(trials);
+// timeline.push(trials);
 
 
 // demographic survey
@@ -179,7 +179,7 @@ const demographic_survey = {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
 };
-timeline.push(demographic_survey);
+// timeline.push(demographic_survey);
 
 // language background survey
 const language_background_survey = {
@@ -198,7 +198,7 @@ const language_background_survey = {
     },
     button_label_finish: '继续',
 };
-timeline.push(language_background_survey);
+// timeline.push(language_background_survey);
 
 const language_use_survey = {
     type: jsPsychSurveyLikert,
