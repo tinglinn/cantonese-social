@@ -4,7 +4,7 @@ const jsPsych = initJsPsych({
     message_progress_bar: "实验进度",
     on_finish: function () {
         //jsPsych.data.displayData('csv');
-        window.location = "https://tinglinn.github.io/cantonese-social/experiments/01_attribute_rating/thanks.html";
+        // window.location = "https://tinglinn.github.io/cantonese-social/experiments/01_attribute_rating/thanks.html";
         proliferate.submit({ "trials": jsPsych.data.get().values() });
     }
 });
@@ -46,8 +46,8 @@ timeline.push(irb);
 const intro1 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
-            <p>本研究的调查对象为母语为粤语的的广州人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次酬劳。</p>
-            <p>本实验将用时大约15分钟，完成后您将获得25元人民币酬劳，会以支付宝转账的形式支付。</p>
+            <p>本研究的调查对象为母语为粤语的人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次酬劳。</p>
+            <p>本实验使用简体中文，将用时大约15分钟，完成后您将按公布的标准获得酬劳。</p>
             <p>请点击 "继续"。</p>`,
     choices: ['继续'],
     on_finish: function (data) {
@@ -103,7 +103,7 @@ let raw_attributes = [
     { prompt: "这位朗读者很随意。", name: 'casual', labels: likert_scale, required: true },
     { prompt: "这位朗读者很传统。", name: 'traditional', labels: likert_scale, required: true },
     { prompt: "这位朗读者很可靠。", name: 'dependable', labels: likert_scale, required: true },
-    { prompt: "这位朗读者是广州本地人。", name: 'local', labels: likert_scale, required: true }
+    { prompt: "这位朗读者的口音与我相似。", name: 'local', labels: likert_scale, required: true }
 ];
 let attributes = shuffleArray(raw_attributes); // shuffle array is from utils.js
 
@@ -140,7 +140,7 @@ stimuli.forEach((stimulus) => {
         }
     );
 });
-// timeline.push(trials);
+timeline.push(trials);
 
 
 // demographic survey
@@ -157,7 +157,7 @@ const demographic_survey = {
                 prompt: "您的性别是什么?",
                 name: 'gender',
                 options: ['男', '女', '非二元性别', '不想回答'],
-                required: false,
+                required: true,
             },
             {
                 type: 'text',
@@ -170,7 +170,13 @@ const demographic_survey = {
                 prompt: "您的最高学历是什么?",
                 name: 'education',
                 options: ['未完成小学', '小学', '初中', '高中或中专', '大专', '本科', '硕士', '博士', '不想回答'],
-                required: false,
+                required: true,
+            },
+            {
+                type: 'text',
+                prompt: "您说的粤语源自哪个地区（例如，广州，香港，澳门，顺德）? ",
+                name: 'origin',
+                required: true,
             }
         ]
     ],
@@ -179,12 +185,12 @@ const demographic_survey = {
         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
     },
 };
-// timeline.push(demographic_survey);
+timeline.push(demographic_survey);
 
 // language background survey
 const language_background_survey = {
     type: jsPsychSurveyHtmlForm,
-    preamble: `<p>您会说哪些语言或方言（比如台山话，粤语，客家话，普通话）？</p>
+    preamble: `<p>您会说哪些语言或方言（比如英语，台山话，粤语，客家话，普通话）？</p>
                <p>请按您<b>使用的自如程度</b>将它们进行排序，将您最自如的语言或方言放在第一位。</p>`,
     html: ` <p>
                 <input name="lang1" type="text" placeholder="" required><BR><BR>
@@ -198,7 +204,7 @@ const language_background_survey = {
     },
     button_label_finish: '继续',
 };
-// timeline.push(language_background_survey);
+timeline.push(language_background_survey);
 
 const language_use_survey = {
     type: jsPsychSurveyLikert,
@@ -221,9 +227,9 @@ const language_attitude_survey = {
     type: jsPsychSurveyLikert,
     preamble: `您有多同意以下的观点？1代表完全不同意，6代表完全同意。`,
     questions: [
-        { prompt: "粤语是广州文化重要的一部分。", name: 'likert_culture', labels: likert_scale, required: true },
-        { prompt: "把粤语传承给广州的年轻一代非常重要", name: 'likert_young', labels: likert_scale, required: true },
-        { prompt: "在广州，粤语已经不再被规范使用", name: 'likert_proper', labels: likert_scale, required: true },
+        { prompt: "粤语是我文化重要的一部分。", name: 'likert_culture', labels: likert_scale, required: true },
+        { prompt: "把粤语传承给我的下一代非常重要", name: 'likert_young', labels: likert_scale, required: true },
+        { prompt: "在我身边，粤语已经不再被规范使用", name: 'likert_proper', labels: likert_scale, required: true },
         { prompt: "粤语对我的身份认同感很重要。", name: 'likert_identity', labels: likert_scale, required: true },
     ],
     randomize_question_order: true,
@@ -259,30 +265,29 @@ var free_response = {
 timeline.push(free_response)
 
 // payment information
-const payment = {
-    type: jsPsychSurveyText,
-    questions: [
-        {
-            prompt: `
-            <p>请提供您的支付宝账号，以便我们给您转账。.</p>
-            `,
-            name: 'payment'
-        }
-    ],
-    on_finish: function (data) {
-        jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
-    },
-    button_label_finish: '继续',
-};
-timeline.push(payment);
+// const payment = {
+//     type: jsPsychSurveyText,
+//     questions: [
+//         {
+//             prompt: `
+//             <p>请提供您的支付宝账号，以便我们给您转账。.</p>
+//             `,
+//             name: 'payment'
+//         }
+//     ],
+//     on_finish: function (data) {
+//         jsPsych.setProgressBar(data.trial_index / 76) // adjust total num of trials
+//     },
+//     button_label_finish: '继续',
+// };
+// timeline.push(payment);
 
 /* thank u */
 const thankyou = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
             <p>感谢您完成本次实验！</p>
-            <p>我们将尽快将您的酬劳转给您。如有问题，可以微信联系tinglin_22。</p>
-            <p>请按"提交"按钮正式完成本实验。</p>
+            <p>请按"提交"按钮正式完成本实验。提交后请您稍等片刻，在您回到Prolific网站后就可以关闭窗口。</p>
       `,
     choices: ["提交"],
     on_finish: function (data) {
