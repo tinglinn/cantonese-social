@@ -254,7 +254,13 @@ var free_response = {
             },
             {
                 type: 'text',
-                prompt: "如果听过懒音这个概念，您对懒音的使用有什么看法吗？",
+                prompt: "如果听过懒音这个概念，您对懒音的使用有什么看法吗？您可以用任何语言回答。",
+                name: 'attitude',
+                required: false,
+            },
+            {
+                type: 'text',
+                prompt: "您对这个实验有什么反馈吗？您可以用任何语言回答。",
                 name: 'attitude',
                 required: false,
             },
