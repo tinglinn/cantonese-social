@@ -5,14 +5,14 @@ const jsPsych = initJsPsych({
     on_finish: function () {
         //jsPsych.data.displayData('csv');
         // window.location = "https://tinglinn.github.io/cantonese-social/experiments/01_attribute_rating/thanks.html";
-        proliferate.submit({ "trials": jsPsych.data.get().values() });
+        proliferate.submit({ "trials": data.values() });
     }
 });
 
 let timeline = [];
 
 // preload audio
-let all_objects = trial_objects.concat(attention_check_objects)
+let all_objects = trial_objects.concat(attention_check_objects);
 const preload_array = all_objects; // defined in trial
 const preload_trial = {
     type: jsPsychPreload,
@@ -46,8 +46,8 @@ timeline.push(irb);
 const intro1 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
-            <p>本研究的调查对象为母语为粤语的人。您可以将此链接分享给其他符合条件的人，但请不要多次参与本研究，您只会获得一次酬劳。</p>
-            <p>本实验使用简体中文，将用时大约15分钟，完成后您将按公布的标准获得酬劳。</p>
+            <p>本研究的调查对象为母语为粤语的人。</p>
+            <p>本实验使用简体中文，将用时大约15-20分钟，完成后您将按公布的标准获得酬劳。</p>
             <p>请点击 "继续"。</p>`,
     choices: ['继续'],
     on_finish: function (data) {
