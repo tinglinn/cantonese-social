@@ -3,21 +3,6 @@ import ast
 import json
 from trials import trial_objects
 
-# # Read the JavaScript array from the file
-# with open('experiments/01_attribute_rating/trials.js', 'r') as file:
-#     js_array_str = file.read()
-
-# # Remove the JavaScript variable declaration part and trailing semicolon
-# start_pos = js_array_str.find('[')
-# end_pos = js_array_str.find(']', start_pos) + 1
-
-# # Extract the first array declaration from the JavaScript code
-# js_array_str_cleaned = js_array_str[start_pos:end_pos]
-# print(js_array_str_cleaned)
-# # Convert the JavaScript array string to a Python list
-# trial_objects = json.loads(js_array_str_cleaned)
-
-
 df = pd.read_csv('data/cantonese_lazy_accent-merged.csv')
 
 pd.set_option('display.max_columns', None)

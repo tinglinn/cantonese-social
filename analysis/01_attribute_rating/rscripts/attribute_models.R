@@ -11,10 +11,12 @@ library(brms)
 library(ggplot2)
 library(ggeffects)
 library(effects)
+
 # Assuming your data frame is named 'data' and it contains the variables 'local', 'condition', 'clip', 'workerid', and 'pronunciation_category'
 data <- read.csv("../attribute_rating_data.csv")
 head(data)
-
+raw_data <- read.csv('../../../data/cantonese_lazy_accent-merged.csv')
+head(raw_data)
 # Centering the binary predictor 'condition'
 data = data %>% 
   mutate(cCondition = as.numeric(as.factor(condition)) - mean(as.numeric(as.factor(condition))))
@@ -31,22 +33,6 @@ summary(m.local)
 data$casual <- factor(data$casual, levels = unique(data$casual))
 m.casual <- clmm(casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid), data = data)
 summary(m.casual)
-# exploratory
-m.casual.attitude <- clmm(casual ~ cCondition + cCondition*likert_proper + (1 + cCondition | clip) + (1 + cCondition | workerid), data = data)
-m.casual.attitude.no.interact <- clmm(casual ~ cCondition + likert_proper + (1 + cCondition | clip) + (1 + cCondition | workerid), data = data)
-
-summary(m.casual.attitude)
-summary(m.casual.attitude.no.interact)
-
-pred_prob <- ggpredict(m.casual, type = "fe")
-pred_prob_df <- as.data.frame(pred_prob)
-
-# Plot the data frame using ggplot
-ggplot(pred_prob_df, aes(x = cCondition, y = predicted, color = group)) +
-  geom_line() +
-  geom_point() +
-  labs(x = "Condition", y = "Predicted Probability", color = "Group") +
-  theme_minimal()
 
 
 # Fit the ordinal mixed-effects regression model for FRIENDLY
@@ -98,13 +84,4 @@ summary(m.acat)
 # In the context of model selection, an LOOIC difference greater than twice its corresponding standard error can be interpreted as suggesting that the model with the lower LOOIC value fits the data substantially better, at least when the number of observations is large enough
 loo(m.logit,m.acat)
 
-
-
-
-# Optionally, you can extract random effects and predictions
-# Random effects
-random_effects(model)
-
-# Predictions (adjust 'new_data' with your new data)
-# predicted_values <- predict(model, newdata = new_data, type = "response")
 
