@@ -1,0 +1,215 @@
+EDUCATED 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: data (Number of observations: 891) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.71      0.13     0.51     1.02 1.00     1006     1673
+sd(cCondition)                0.31      0.17     0.01     0.65 1.00      787      890
+cor(Intercept,cCondition)     0.13      0.38    -0.69     0.84 1.00     2833     1849
+
+~workerid (Number of levels: 33) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.05      0.17     0.77     1.43 1.00      917     1924
+sd(cCondition)                0.30      0.15     0.03     0.60 1.00     1734     1152
+cor(Intercept,cCondition)     0.67      0.33    -0.23     0.99 1.00     2826     2475
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.92      0.44    -3.81    -2.10 1.01     1140     2053
+Intercept[2]    -2.29      0.29    -2.88    -1.76 1.01      497     1546
+Intercept[3]    -0.93      0.25    -1.42    -0.45 1.01      388     1078
+Intercept[4]     1.07      0.26     0.57     1.57 1.01      419     1045
+Intercept[5]     2.44      0.32     1.83     3.08 1.01      632     1594
+cCondition       0.04      0.13    -0.21     0.29 1.00     1724     2530
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+> print(bayesfactor.educated)
+Estimated Bayes factor in favor of m.educated.acat over m.educated.null: 0.45530
+
+
+
+CASUAL
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: data (Number of observations: 891) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.64      0.11     0.46     0.89 1.00      865     1342
+sd(cCondition)                0.37      0.11     0.18     0.60 1.00     1244     1495
+cor(Intercept,cCondition)    -0.38      0.25    -0.81     0.14 1.00     2142     2191
+
+~workerid (Number of levels: 33) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.46      0.08     0.33     0.64 1.00     1056     1589
+sd(cCondition)                0.22      0.11     0.02     0.44 1.01      801     1021
+cor(Intercept,cCondition)     0.20      0.37    -0.62     0.84 1.00     2718     1377
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -1.25      0.23    -1.70    -0.80 1.00     1026     1615
+Intercept[2]    -0.89      0.20    -1.30    -0.50 1.00      900     1663
+Intercept[3]    -0.40      0.18    -0.76    -0.05 1.00      780     1434
+Intercept[4]     0.16      0.18    -0.19     0.49 1.00      764     1548
+Intercept[5]     1.01      0.19     0.63     1.38 1.00      905     1513
+cCondition      -0.20      0.10    -0.41     0.01 1.00     1578     2065
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+> print(bayesfactor.casual)
+Estimated Bayes factor in favor of m.casual.acat over m.casual.null: 1.67293
+
+
+
+
+TRADITIONAL
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: traditional ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: data (Number of observations: 891) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.36      0.07     0.25     0.53 1.00     1380     1993
+sd(cCondition)                0.23      0.11     0.02     0.47 1.00     1041     1171
+cor(Intercept,cCondition)    -0.40      0.35    -0.93     0.41 1.00     2239     1863
+
+~workerid (Number of levels: 33) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.72      0.11     0.53     0.96 1.00      798     1730
+sd(cCondition)                0.09      0.07     0.00     0.26 1.00     1752     1344
+cor(Intercept,cCondition)    -0.05      0.56    -0.95     0.92 1.00     3048     2417
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -1.19      0.23    -1.65    -0.74 1.00      944     2039
+Intercept[2]    -1.15      0.19    -1.53    -0.77 1.01      634     1024
+Intercept[3]    -0.20      0.17    -0.53     0.14 1.01      563     1001
+Intercept[4]     0.46      0.18     0.12     0.82 1.01      559      886
+Intercept[5]     1.69      0.22     1.26     2.14 1.01      903     1254
+cCondition       0.10      0.09    -0.06     0.27 1.00     2736     2801
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+> print(bayesfactor.traditional)
+Estimated Bayes factor in favor of m.traditional.acat over m.traditional.null: 0.48200
+
+
+
+
+FRIENDLY
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: friendly ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: data (Number of observations: 891) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.52      0.09     0.36     0.72 1.00     1040     1605
+sd(cCondition)                0.38      0.14     0.10     0.67 1.00     1208     1352
+cor(Intercept,cCondition)    -0.38      0.30    -0.90     0.27 1.00     2155     1321
+
+~workerid (Number of levels: 33) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.80      0.12     0.60     1.06 1.00      910     1659
+sd(cCondition)                0.19      0.12     0.01     0.46 1.00     1178     1628
+cor(Intercept,cCondition)     0.31      0.45    -0.73     0.96 1.00     2830     2060
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.43      0.35    -3.17    -1.76 1.00     1279     1753
+Intercept[2]    -2.04      0.23    -2.51    -1.58 1.00      771     1439
+Intercept[3]    -0.61      0.19    -0.97    -0.23 1.01      529     1031
+Intercept[4]     1.11      0.20     0.73     1.51 1.01      567     1295
+Intercept[5]     2.07      0.25     1.59     2.55 1.01      831     2258
+cCondition      -0.12      0.12    -0.36     0.11 1.00     1718     2270
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+> print(bayesfactor.friendly)
+Estimated Bayes factor in favor of m.friendly.acat over m.friendly.null: 0.56061
+
+
+
+
+DEPENDABLE
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: dependable ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: data (Number of observations: 891) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.32      0.07     0.18     0.48 1.00     1319     1848
+sd(cCondition)                0.51      0.15     0.23     0.82 1.00     1107      829
+cor(Intercept,cCondition)    -0.12      0.31    -0.69     0.47 1.00     1137     2070
+
+~workerid (Number of levels: 33) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.82      0.13     0.61     1.10 1.00      757     1693
+sd(cCondition)                0.29      0.15     0.03     0.61 1.00     1036     1285
+cor(Intercept,cCondition)     0.24      0.36    -0.52     0.88 1.00     2915     1757
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.54      0.42    -3.41    -1.74 1.00     2291     2073
+Intercept[2]    -2.13      0.24    -2.61    -1.67 1.00     1265     2481
+Intercept[3]    -1.06      0.18    -1.39    -0.70 1.00      643     1332
+Intercept[4]     1.08      0.18     0.74     1.45 1.00      647     1215
+Intercept[5]     1.94      0.25     1.47     2.42 1.00     1065     1646
+cCondition       0.07      0.15    -0.22     0.37 1.00     1952     1948
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+> print(bayesfactor.dependable)
+Estimated Bayes factor in favor of m.dependable.acat over m.dependable.null: 0.35252

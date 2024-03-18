@@ -1,0 +1,608 @@
+CASUAL
+
+Origin: 广州 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 270) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.52      0.11     0.33     0.78 1.00     1402     2364
+sd(cCondition)                0.17      0.13     0.01     0.48 1.00     1845     2035
+cor(Intercept,cCondition)     0.06      0.52    -0.89     0.94 1.00     3949     2335
+
+~workerid (Number of levels: 10) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.58      0.19     0.33     1.06 1.00     1311     1891
+sd(cCondition)                0.30      0.19     0.01     0.73 1.00     1386     1395
+cor(Intercept,cCondition)     0.40      0.44    -0.64     0.97 1.00     3836     2834
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -0.91      0.34    -1.60    -0.26 1.00     1330     1663
+Intercept[2]    -0.30      0.31    -0.93     0.30 1.00     1493     2135
+Intercept[3]    -0.15      0.30    -0.72     0.46 1.00     1352     1299
+Intercept[4]    -0.21      0.29    -0.78     0.39 1.00     1509     2181
+Intercept[5]     0.99      0.30     0.42     1.62 1.00     1167     1670
+cCondition      -0.03      0.16    -0.34     0.29 1.00     2657     2286
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+Origin: 澳门 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 2.02      1.52     0.09     5.80 1.00      474     1280
+sd(cCondition)                2.84      2.18     0.15     8.19 1.00      736     1300
+cor(Intercept,cCondition)    -0.38      0.48    -0.97     0.75 1.00     1478     1741
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.76      1.61     0.07     6.11 1.00     3039     2197
+sd(cCondition)                2.55      2.35     0.08     9.04 1.00     1945     1087
+cor(Intercept,cCondition)    -0.01      0.59    -0.96     0.95 1.00     2930     1023
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.87      1.92    -7.38     0.29 1.00     1610     1609
+Intercept[2]    -0.45      1.39    -3.49     2.29 1.00     2138     1791
+Intercept[3]     5.32      2.87     1.13    12.06 1.00     1746     1897
+cCondition      -0.57      3.49    -7.39     7.49 1.00     1362      859
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+Origin: 香港 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 567) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.75      0.13     0.54     1.04 1.00      908     1667
+sd(cCondition)                0.57      0.15     0.31     0.90 1.00     1184     1903
+cor(Intercept,cCondition)    -0.39      0.25    -0.79     0.15 1.00     1785     2185
+
+~workerid (Number of levels: 21) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.41      0.10     0.25     0.63 1.00     1080     1761
+sd(cCondition)                0.29      0.15     0.03     0.59 1.00      663      874
+cor(Intercept,cCondition)     0.11      0.40    -0.68     0.85 1.00     1962     1367
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -1.52      0.30    -2.12    -0.95 1.00     1264     2315
+Intercept[2]    -1.27      0.25    -1.78    -0.79 1.00      901     1673
+Intercept[3]    -0.46      0.22    -0.89    -0.04 1.00      786     1815
+Intercept[4]     0.31      0.21    -0.10     0.74 1.00      737     1763
+Intercept[5]     0.99      0.24     0.54     1.46 1.00      853     2047
+cCondition      -0.30      0.16    -0.62     0.00 1.00     1449     1670
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+Origin: 马来西亚 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.83      1.28     0.11     4.90 1.01      318      827
+sd(cCondition)                2.26      1.90     0.10     7.05 1.01      435     1007
+cor(Intercept,cCondition)    -0.33      0.47    -0.97     0.72 1.00     1195     1559
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.68      1.57     0.06     5.85 1.00     2613     2108
+sd(cCondition)                2.43      2.28     0.08     8.53 1.00     2165     1160
+cor(Intercept,cCondition)    -0.03      0.59    -0.95     0.95 1.00     4726     2646
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.92      1.80    -6.93     0.01 1.01     1227     1864
+Intercept[2]    -0.40      1.31    -3.13     1.99 1.00     1864     2263
+Intercept[3]    -1.19      1.25    -3.70     1.29 1.00     1974     2245
+Intercept[4]     2.19      1.50    -0.37     5.45 1.00     1393     1656
+Intercept[5]     3.91      2.38     0.30     9.41 1.00     1201     1538
+cCondition      -0.02      2.88    -5.84     6.23 1.00     1218      839
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+
+
+TRADITIONAL
+Origin: 广州 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: traditional ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 270) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.08      0.06     0.00     0.21 1.00     1953     2403
+sd(cCondition)                0.22      0.15     0.01     0.54 1.00     1569     2508
+cor(Intercept,cCondition)     0.13      0.58    -0.94     0.97 1.00     2275     2540
+
+~workerid (Number of levels: 10) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.67      0.22     0.37     1.21 1.00     1410     2233
+sd(cCondition)                0.16      0.13     0.01     0.47 1.00     2104     2299
+cor(Intercept,cCondition)     0.05      0.55    -0.92     0.94 1.00     4812     2600
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -0.38      0.33    -1.03     0.25 1.00     1385     2060
+Intercept[2]    -0.27      0.31    -0.89     0.32 1.00     1458     2002
+Intercept[3]    -0.32      0.30    -0.93     0.28 1.00     1449     1849
+Intercept[4]    -0.03      0.29    -0.59     0.54 1.00     1145     1676
+Intercept[5]     1.57      0.34     0.92     2.25 1.00     1705     2078
+cCondition      -0.00      0.12    -0.24     0.25 1.00     3845     2711
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+Origin: 澳门 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: traditional ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 3.40      2.73     0.11    10.24 1.02      308      856
+sd(cCondition)                3.02      3.32     0.10    11.91 1.01      444      450
+cor(Intercept,cCondition)     0.02      0.53    -0.93     0.92 1.00     1441     1982
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.89      1.75     0.07     6.26 1.00     1736     1607
+sd(cCondition)                2.71      2.65     0.07     9.65 1.00     1621     1440
+cor(Intercept,cCondition)    -0.03      0.58    -0.96     0.95 1.00     2855     1961
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.96      2.45    -8.62     0.74 1.01      698     1298
+Intercept[2]     2.15      2.08    -1.28     7.33 1.00     1223     1373
+cCondition      -0.65      4.24   -11.08     7.66 1.01      753      764
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+Origin: 香港 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: traditional ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 567) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.68      0.12     0.49     0.97 1.00     1016     1574
+sd(cCondition)                0.22      0.15     0.01     0.55 1.01      803     1576
+cor(Intercept,cCondition)    -0.23      0.46    -0.94     0.81 1.00     2965     2277
+
+~workerid (Number of levels: 21) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.91      0.18     0.63     1.34 1.00      960     1447
+sd(cCondition)                0.15      0.11     0.01     0.41 1.00     1646     1368
+cor(Intercept,cCondition)    -0.11      0.53    -0.94     0.90 1.00     3927     2111
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.14      0.37    -2.87    -1.45 1.00     1086     1756
+Intercept[2]    -1.62      0.29    -2.19    -1.06 1.00      690     1406
+Intercept[3]    -0.24      0.26    -0.75     0.26 1.00      615     1331
+Intercept[4]     0.78      0.27     0.25     1.30 1.01      622     1404
+Intercept[5]     1.99      0.33     1.36     2.65 1.00      866     1536
+cCondition       0.21      0.12    -0.01     0.44 1.00     2911     2440
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+Origin: 马来西亚 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: traditional ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.20      0.98     0.05     3.61 1.01      446     1110
+sd(cCondition)                1.78      1.45     0.06     5.39 1.00      636     1115
+cor(Intercept,cCondition)    -0.03      0.54    -0.93     0.93 1.00     1137     1492
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.65      1.57     0.05     5.83 1.00     2348     1923
+sd(cCondition)                2.56      2.56     0.08     9.33 1.00     1916     1414
+cor(Intercept,cCondition)    -0.04      0.57    -0.95     0.93 1.00     3501     2381
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.30      2.21    -7.37     1.47 1.00     1428     1449
+Intercept[2]    -4.18      1.95    -8.62    -0.92 1.00     1488     1572
+Intercept[3]     0.10      1.16    -2.37     2.40 1.00     1725     1852
+Intercept[4]     1.52      1.35    -1.02     4.34 1.01     1529     2250
+Intercept[5]     3.12      1.98    -0.11     7.66 1.00     1372     1908
+cCondition      -0.92      3.05    -7.57     5.14 1.00     1361      914
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+EDUCATED
+Origin: 广州 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 270) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.56      0.13     0.33     0.85 1.00     1271     2059
+sd(cCondition)                0.31      0.22     0.01     0.82 1.01      913     1657
+cor(Intercept,cCondition)     0.01      0.48    -0.89     0.89 1.00     2533     2204
+
+~workerid (Number of levels: 10) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.43      0.17     0.18     0.86 1.00     1151     1399
+sd(cCondition)                0.18      0.15     0.01     0.56 1.00     2097     1805
+cor(Intercept,cCondition)    -0.02      0.57    -0.95     0.94 1.00     3271     2579
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -1.90      0.51    -2.97    -0.95 1.00     2894     2635
+Intercept[2]    -1.32      0.34    -2.00    -0.67 1.00     2181     2522
+Intercept[3]    -1.19      0.25    -1.69    -0.70 1.00     1657     2273
+Intercept[4]     1.28      0.25     0.80     1.81 1.00     1620     2324
+Intercept[5]     1.26      0.35     0.60     1.97 1.00     2437     2708
+cCondition      -0.07      0.18    -0.43     0.27 1.00     2392     2334
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+Origin: 澳门 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.48      1.25     0.06     4.66 1.01      962     1472
+sd(cCondition)                2.03      1.72     0.07     6.21 1.00     1044     1406
+cor(Intercept,cCondition)     0.07      0.56    -0.93     0.96 1.00     1627     1685
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 2.12      2.03     0.08     7.29 1.00     1636     1729
+sd(cCondition)                2.86      3.04     0.08    11.61 1.01      634      470
+cor(Intercept,cCondition)    -0.01      0.57    -0.95     0.95 1.00     2559     2193
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -5.04      2.79   -11.56    -0.25 1.00     1224     1386
+Intercept[2]     3.95      2.57    -0.12    10.90 1.01      806      820
+cCondition      -1.94      4.97   -17.79     6.47 1.01      363       78
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+Origin: 香港 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 567) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.85      0.15     0.58     1.18 1.00     1577     2646
+sd(cCondition)                0.39      0.22     0.03     0.86 1.00     1011     1731
+cor(Intercept,cCondition)     0.30      0.39    -0.58     0.94 1.00     3691     2464
+
+~workerid (Number of levels: 21) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.65      0.32     1.13     2.39 1.00     1634     2837
+sd(cCondition)                0.58      0.24     0.16     1.10 1.00     1827     1619
+cor(Intercept,cCondition)     0.74      0.26     0.05     0.99 1.00     2802     2601
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -3.87      0.72    -5.36    -2.57 1.00     1418     2151
+Intercept[2]    -2.85      0.47    -3.78    -1.94 1.01      758     1274
+Intercept[3]    -0.76      0.42    -1.61     0.07 1.01      631     1016
+Intercept[4]     0.93      0.43     0.10     1.79 1.01      619      910
+Intercept[5]     3.45      0.54     2.47     4.55 1.01      991     1698
+cCondition       0.09      0.22    -0.32     0.54 1.00     1365     1843
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+Origin: 马来西亚 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 2.60      1.86     0.13     7.17 1.01      598      574
+sd(cCondition)                3.18      2.98     0.12    10.48 1.01      653     1283
+cor(Intercept,cCondition)     0.38      0.51    -0.84     0.98 1.00      963     1133
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.91      1.78     0.07     6.97 1.00     1979     1609
+sd(cCondition)                2.79      2.78     0.07    11.08 1.00     1443      890
+cor(Intercept,cCondition)    -0.01      0.57    -0.95     0.94 1.00     3273     2556
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.96      2.22    -8.13     0.77 1.00     1182     1394
+Intercept[2]     3.43      2.48    -0.31     9.18 1.00     1131     1045
+cCondition       2.93      4.24    -4.87    12.97 1.01      672      494
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+
+
+FRIENDLY
+Origin: 广州 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: friendly ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 270) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.55      0.14     0.30     0.86 1.00     1414     2342
+sd(cCondition)                0.37      0.26     0.01     0.95 1.00      811     1783
+cor(Intercept,cCondition)     0.06      0.48    -0.89     0.91 1.00     3303     2269
+
+~workerid (Number of levels: 10) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.72      0.25     0.37     1.34 1.00     1264     1950
+sd(cCondition)                0.31      0.24     0.01     0.92 1.00     1254     1774
+cor(Intercept,cCondition)     0.12      0.50    -0.85     0.93 1.00     3581     2503
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.09      0.52    -3.17    -1.11 1.00     2360     2370
+Intercept[2]    -1.49      0.37    -2.23    -0.81 1.00     1621     1873
+Intercept[3]    -0.66      0.30    -1.28    -0.07 1.00     1198     1488
+Intercept[4]     1.63      0.33     1.00     2.33 1.00     1261     1387
+Intercept[5]     2.00      0.47     1.11     2.97 1.00     1786     2124
+cCondition      -0.04      0.22    -0.48     0.41 1.00     2854     2157
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+Origin: 澳门 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: friendly ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 2.45      2.06     0.10     7.52 1.00      654     1599
+sd(cCondition)                2.52      2.39     0.10     8.47 1.00     1148     1871
+cor(Intercept,cCondition)     0.17      0.53    -0.89     0.96 1.00     2031     2370
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 2.02      1.76     0.09     6.68 1.00     3086     2383
+sd(cCondition)                2.58      2.56     0.07     9.77 1.00     2743     2047
+cor(Intercept,cCondition)    -0.01      0.57    -0.95     0.95 1.00     4111     2099
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -5.51      3.64   -14.62    -0.43 1.00     1301     1453
+Intercept[2]     1.87      1.93    -1.38     6.30 1.00     1987     1290
+cCondition      -0.21      3.55    -8.43     7.43 1.00     1770     1469
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+Origin: 香港 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: friendly ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 567) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.62      0.12     0.43     0.88 1.00     1146     1894
+sd(cCondition)                0.49      0.19     0.11     0.87 1.01      970      950
+cor(Intercept,cCondition)    -0.28      0.31    -0.84     0.35 1.00     1809     1939
+
+~workerid (Number of levels: 21) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 0.94      0.18     0.65     1.38 1.00      920     1773
+sd(cCondition)                0.31      0.18     0.02     0.70 1.00      919     1186
+cor(Intercept,cCondition)     0.37      0.40    -0.55     0.96 1.00     2557     1424
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -2.71      0.50    -3.74    -1.75 1.00     1098     1867
+Intercept[2]    -2.43      0.33    -3.09    -1.81 1.00      610     1760
+Intercept[3]    -0.54      0.26    -1.07    -0.04 1.00      437      985
+Intercept[4]     0.96      0.27     0.44     1.50 1.00      445     1121
+Intercept[5]     2.14      0.33     1.50     2.83 1.00      722     1504
+cCondition      -0.17      0.16    -0.51     0.14 1.00     1784     2165
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+Origin: 马来西亚 
+ Family: acat 
+  Links: mu = logit; disc = identity 
+Formula: friendly ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid) 
+   Data: df (Number of observations: 27) 
+  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+         total post-warmup draws = 4000
+
+Group-Level Effects: 
+~clip (Number of levels: 27) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.95      1.56     0.09     5.86 1.01      512     1025
+sd(cCondition)                2.45      2.37     0.07     9.05 1.00      675      696
+cor(Intercept,cCondition)    -0.14      0.53    -0.96     0.91 1.00     1627     1719
+
+~workerid (Number of levels: 1) 
+                          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)                 1.87      1.79     0.06     7.10 1.00     1541      801
+sd(cCondition)                2.54      2.36     0.08     8.77 1.00     1459     1410
+cor(Intercept,cCondition)    -0.02      0.58    -0.95     0.95 1.00     3362     2178
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept[1]    -3.94      2.40    -9.95    -0.15 1.01     1035     1400
+Intercept[2]     0.14      1.51    -2.94     3.27 1.00      915      708
+Intercept[3]     3.68      2.40    -0.14     9.59 1.01      823      792
+cCondition       1.36      3.82    -5.98    10.04 1.01      947      700
+
+Family Specific Parameters: 
+     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+disc     1.00      0.00     1.00     1.00   NA       NA       NA
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).

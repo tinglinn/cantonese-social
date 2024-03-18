@@ -55,14 +55,27 @@ passed_attention_critical_trials = passed_attention_critical_trials.dropna(subse
 
 
 # create new column for language attitude(s)!
-filtered_df = df.loc[(df['trial_index'] == 67) & (~df['workerid'].isin(failed_attention_checks))]
-for workerid in filtered_df['workerid'].unique():
-    response = filtered_df[filtered_df['workerid'] == workerid]['response'].iloc[0]
+langatt_df = df.loc[(df['trial_index'] == 67) & (~df['workerid'].isin(failed_attention_checks))]
+for workerid in langatt_df['workerid'].unique():
+    response = langatt_df[langatt_df['workerid'] == workerid]['response'].iloc[0]
     response_dict = ast.literal_eval(response)
     
     for key in response_dict.keys():
         passed_attention_critical_trials.loc[df['workerid'] == workerid, key] = response_dict[key]
 
-# print(passed_attention_critical_trials.head(3))
+# create new columns for demographic data
+demo_df = df.loc[(df['trial_index'] == 64) & (~df['workerid'].isin(failed_attention_checks))]
+for workerid in demo_df['workerid'].unique():
+    response = demo_df[demo_df['workerid'] == workerid]['response'].iloc[0]
+    response_dict = ast.literal_eval(response)
+    
+    for key in response_dict.keys():
+        value = response_dict[key]
+        if value == "Guangzhou" or value == "Guangzhou " or value == "广州":
+            value = "广州"
+        elif value == "Hong Kong" or value == "hong kong " or value == "香港":
+            value = "香港"
+        
+        passed_attention_critical_trials.loc[df['workerid'] == workerid, key] = value
 
 attribute_rating_data = passed_attention_critical_trials.to_csv('./analysis/01_attribute_rating/attribute_rating_data.csv')

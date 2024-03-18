@@ -3,6 +3,7 @@ install.packages("ordinal")
 install.packages("lme4")
 install.packages("effects")
 install.packages("ggeffects")
+install.packages("brglm2")
 library(ordinal)
 library(lme4)
 library(dplyr)
@@ -11,16 +12,19 @@ library(brms)
 library(ggplot2)
 library(ggeffects)
 library(effects)
+library(brglm2)
 
 # Assuming your data frame is named 'data' and it contains the variables 'local', 'condition', 'clip', 'workerid', and 'pronunciation_category'
 data <- read.csv("../attribute_rating_data.csv")
 head(data)
 raw_data <- read.csv('../../../data/cantonese_lazy_accent-merged.csv')
 head(raw_data)
+
 # Centering the binary predictor 'condition'
 data = data %>% 
   mutate(cCondition = as.numeric(as.factor(condition)) - mean(as.numeric(as.factor(condition))))
 head(data)
+
 
 # Fit the ordinal mixed-effects regression model for LOCAL
 data$local <- factor(data$local, levels = unique(data$local))
@@ -66,15 +70,16 @@ summary(m.dependable)
 
 # BAYESIAN ANALYSIS
 # cumulative link model
-data$casual <- factor(data$casual, ordered=TRUE)
-m.logit = brm(casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid),
+head(data)
+data$educated <- factor(data$educated, levels = unique(data$educated))
+m.logit = brm(educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid),
               data=data,
               family=cumulative(),
               cores=4)
 summary(m.logit)
 
 # adjacent category model
-m.acat = brm(casual ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid),
+m.acat = brm(educated ~ cCondition + (1 + cCondition | clip) + (1 + cCondition | workerid),
              data=data,
              family=acat(),
              cores=4)
