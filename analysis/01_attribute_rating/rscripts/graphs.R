@@ -147,6 +147,7 @@ ggplot(agr_part, aes(x = as.numeric(as.character(dependable)), y = prop, color =
   geom_point(data = NULL, aes(x = 0, y = 0 - 0.005), color = cbPalette[2], size = 1.2)   # Second point with color from cbPalette and size 2
   
  
+image_size <- 6
 # Language Attitude Data
 data %>% 
   select("workerid","likert_identity") %>% 
@@ -157,7 +158,9 @@ data %>%
   summarize(count = n()) %>% 
   ggplot(aes(x = likert_identity, y = count)) +
   geom_point() +
-  labs(x = "Cantonese is important to my sense of identity.", y = "Count")
+  labs(x = "Cantonese is important to my sense of identity.", y = "Count")+
+  ylim(0, 25)
+ggsave("likert_identity_plot.png", width = image_size, height = image_size)
 
 data %>% 
   select("workerid","likert_culture") %>% 
@@ -168,8 +171,9 @@ data %>%
   summarize(count = n()) %>% 
   ggplot(aes(x=likert_culture, y=count)) + 
   geom_point() +
-  labs(x = "Cantonese is an important part of my culture.", y = "Count")
-
+  labs(x = "Cantonese is an important part of my culture.", y = "Count")+
+  ylim(0, 25)
+ggsave("likert_culture_plot.png", width = image_size, height = image_size)
 
 data %>% 
   select("workerid","likert_young") %>% 
@@ -180,8 +184,9 @@ data %>%
   summarize(count = n()) %>% 
   ggplot(aes(x=likert_young, y=count)) + 
   geom_point() +
-  labs(x = "It is important to me to pass Cantonese onto my children.", y = "Count")
-
+  labs(x = "It is important to me to pass Cantonese onto my children.", y = "Count")+
+  ylim(0, 25)
+ggsave("likert_young_plot.png", width = image_size, height = image_size)
 
 data %>% 
   select("workerid","likert_proper") %>% 
@@ -192,5 +197,6 @@ data %>%
   summarize(count = n()) %>% 
   ggplot(aes(x=likert_proper, y=count)) + 
   geom_point() +
-  labs(x = "Around me, Cantonese is no longer being spoken properly.", y = "Count")
-
+  labs(x = "Around me, Cantonese is no longer being spoken properly.", y = "Count")+
+  ylim(0, 25)
+ggsave("likert_proper_plot.png", width = image_size, height = image_size)
